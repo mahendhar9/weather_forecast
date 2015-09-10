@@ -1,16 +1,27 @@
-Forecast for {{ city }}
+<div class="row forecast-row">
+<h3>Weather Forecast for {{ city }}</h3>
+  
+<div class="row-bottom">
+  Show forecast for <a href="#/forecast/3" class="btn btn-default">3</a> or <a href="#/forecast/5" class="btn btn-default">5</a> or <a href="#/forecast/7" class="btn btn-default">7</a> days
+</div>
+  
+<div class="row-bottom">
+  <a href="#/" class="btn btn-default">Back to Search...</a>
+</div>
 
+<div class="row">
 <div ng-repeat="w in weatherResult.list">
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">{{ convertToDate(w.dt) | date: 'MMM d,y'}}</h3>
+          <h3 class="panel-title">{{ convertToDate(w.dt) | date: 'MMM d, y'}}</h3>
         </div>
         <div class="panel-body">
-          Daytime Temperature: {{ convertToCelsius(w.temp.day) }}
+          <p>Daytime : {{ convertToCelsius(w.temp.day) }}°C</p>
+          <p>Nighttime: {{ convertToCelsius(w.temp.night) }}°C</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

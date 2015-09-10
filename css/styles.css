@@ -1,4 +1,79 @@
-.city-form {
-  margin-top: 50px;
+h2 {
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+a {
+  margin-right: 5px;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+}
+
+.title-row {
+  margin-top: 130px;
+}
+
+.para-row h4{
+  margin-bottom: 0;
+  margin-top:20px;
   text-align: center;
 }
+
+.city-form {
+  margin-top: 40px;;
+  text-align: center;
+}
+
+#search-city {
+  width:35%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 7px;
+}
+
+.forecast-row {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.row-bottom {
+  margin-bottom: 20px;
+}
+
+
+
+.panel {
+  width: 30vw;
+  margin:0 auto 10px;
+}
+
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

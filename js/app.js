@@ -24,7 +24,7 @@ weatherApp.config(function ($routeProvider) {
 
 //Services
 weatherApp.service('cityService', function() {
-  this.city = 'Hyderabad'
+  this.city = ''
 });
 
 //Controllers
@@ -39,7 +39,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
     $scope.city = cityService.city;
     
-    $scope.days = $routeParams.days || 2;
+    $scope.days = $routeParams.days || 3;
     
     $scope.weatherAPI =           $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {callback: "JSON_CALLBACK"},{get: {method: "JSONP"}});
   
@@ -54,24 +54,5 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
   $scope.convertToDate = function(dt){
     return new Date(dt*1000);
   };
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 }]);
 
