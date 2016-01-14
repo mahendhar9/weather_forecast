@@ -2,7 +2,7 @@
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
 //Routes
-weatherApp.config(function ($routeProvider) {
+weatherApp.config(function($routeProvider) {
 
   $routeProvider
   .when('/', {
@@ -24,12 +24,12 @@ weatherApp.config(function ($routeProvider) {
 
 //Services
 weatherApp.service('cityService', function() {
-  this.city = ''
+  this.city = '';
 });
 
 //Controllers
 weatherApp.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
-  $scope.city = cityService.city
+  $scope.city = cityService.city;
   
   $scope.$watch('city', function() {
     cityService.city = $scope.city;
@@ -37,13 +37,13 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 }]);
 
 weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
-    $scope.city = cityService.city;
+  $scope.city = cityService.city;
     
-    $scope.days = $routeParams.days || 3;
+  $scope.days = $routeParams.days || 3;
     
-    $scope.weatherAPI =           $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {callback: "JSON_CALLBACK"},{get: {method: "JSONP"}});
+  $scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {callback: "JSON_CALLBACK"},{get: {method: "JSONP"}});
   
-  $scope.weatherResult = $scope.weatherAPI.get({q: $scope.city, cnt: $scope.days });
+  $scope.weatherResult = $scope.weatherAPI.get({q: $scope.city, cnt: $scope.days, appid: 'cdd59afc159cde02f6321b9893177f80' });
   
   console.log($scope.weatherResult);
   
